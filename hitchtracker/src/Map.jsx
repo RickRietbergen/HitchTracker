@@ -25,6 +25,10 @@ const Map = ({ destination, center, setCenter, home, setHome, locChangeCallback 
 		}
 	};
 
+	const mapOptions = {
+		mapTypeId: 'satellite',
+	};
+
 	useEffect(() => {
 		if (destination !== "") {
 			handleGeocode();
@@ -49,7 +53,7 @@ const Map = ({ destination, center, setCenter, home, setHome, locChangeCallback 
 
 	return (
 		<LoadScript googleMapsApiKey="AIzaSyDndGdgfoyjo-o0sObJkLDYTwcwFpTCal0">
-			<GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={zoom}>
+			<GoogleMap options={mapOptions} mapContainerStyle={mapContainerStyle} center={center} zoom={zoom}>
 				{/* Add markers, polygons, or other map features here */}
 			</GoogleMap>
 		</LoadScript>
