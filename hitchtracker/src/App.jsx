@@ -31,18 +31,17 @@ function App() {
 					padding: 10,
 				}}
 			>
-				<h1 style={{ color: "white", padding: 7 }}>Hitchtracker</h1>
+				<h2 style={{ color: "white", textAlign: "center", fontSize: 48, fontWeight: 600, padding: 15 }}>Hitchtracker</h2>
 				<div style={{ display: "flex", flexDirection: "column" }}>
-					<p>Bestemming:</p>
-					<input onChange={(e) => setTempDest(e.target.value)}></input>
-					<button onClick={() => setDestination(tempDest)}>Bereken</button>
+					<p style={{ textAlign: "center", fontSize: "30px" }}>Bestemming:</p>
+					<input style={{ margin: "20px 0px 20px 0px", padding: 10, fontSize: "16px", borderRadius: "10px", border: "2px solid white" }} onChange={(e) => setTempDest(e.target.value)}></input>
+					<button style={{ padding: 10, fontSize: "20px", borderRadius: "10px", backgroundColor: "#0A84FF", borderWidth: "0px", color: "white" }} onClick={() => setDestination(tempDest)}>Bereken</button>
 				</div>
 				<div style={{ display: "flex", flexDirection: "column" }}>
 					{distance && (
 						<>
-							<p>Afstand: {distance.toFixed(2)} KM</p>
-							<p>Verwachte kosten:</p>
-							<p>€ {(distance * 2.65).toFixed(2)}</p>
+							<p style={{ padding: 10, fontSize: "28px" }}>Afstand: {distance.toFixed(2)} KM</p>
+							<p style={{ padding: 10, fontSize: "28px" }}>Verwachte kosten: € {(distance * 2.65).toFixed(2)}</p>
 						</>
 					)}
 				</div>
